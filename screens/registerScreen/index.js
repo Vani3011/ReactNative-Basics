@@ -1,8 +1,8 @@
 import React from 'react';
-import { Image, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { styles } from './style';
-import { TextBox } from './components/textBox';
+import { Alert, Image, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { MobileInputComponent } from './components/mobileInput';
+import { TextBox } from './components/textBox';
+import { styles } from './style';
 
 const RegisterScreen = () => {
     const [state, setState] = React.useState({
@@ -12,11 +12,22 @@ const RegisterScreen = () => {
         mobile_no: ""
     })
     const updateState = (k, v) => {
-        console.log(k, v)
         setState({ ...state, [k]: v })
     }
     const onRegister = () =>{
-        Alert.alert('Registered Successfully!');
+        if(state?.name?.length>0&&state?.mobile_no?.length>0&&state?.mail_id?.length>0&&state?.address?.length>0){
+            Alert.alert('Registered Successfully!');
+            setState({
+                name: "",
+                address: "",
+                mail_id: "",
+                mobile_no: ""
+            })
+        }
+        else{
+            Alert.alert('Please fill all fields');  
+        }
+        
     }
     return (
         <SafeAreaView style={{ flex: 1 }}>
@@ -32,7 +43,7 @@ const RegisterScreen = () => {
                             <Text style={styles.subHdrText}>Please provide your basic details</Text>
                             <Text style={styles.subHdrText2}>to proceed further</Text>
                         </View>
-                        <View>
+                        <View style={styles.inputdiv}>
                             <TextBox
                                 value={state?.name}
                                 placeholder="Name"
@@ -40,7 +51,7 @@ const RegisterScreen = () => {
                             />
                             <MobileInputComponent
                                 value={state?.mobile_no}
-                                placeholder="mobile_no"
+                                placeholder="Mobile No"
                                 onChange={(e) => updateState("mobile_no", e)}
                             />
                             <TextBox
@@ -53,7 +64,7 @@ const RegisterScreen = () => {
                                 placeholder="Address"
                                 onChange={(e) => updateState("address", e)}
                                 multiline={true}
-                                numberOfLines={3}
+                                numberOfLines={4}
                             />
                         </View>
                     </View>
@@ -61,7 +72,7 @@ const RegisterScreen = () => {
 
             </ScrollView>
             <View style={styles.bottomBtn}>
-            <TouchableOpacity onPress={()=>onRegister()}>
+            <TouchableOpacity onPress={onRegister}>
                 <View style={{
                     backgroundColor: "#30AF89",
                     padding: 16,

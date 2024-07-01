@@ -10,7 +10,7 @@ export const TextBox = ({
     numberOfLines = 1
 }) => {
     return (
-        <View style={{marginTop:16}}>
+        <View style={{marginTop:24,flex:1}}>
         <TextInput
             style={multiline ? styles.multilineInput : styles.input}
             onChangeText={(e)=>onChange(e)}

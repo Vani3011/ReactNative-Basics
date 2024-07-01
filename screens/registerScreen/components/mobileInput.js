@@ -1,4 +1,4 @@
-import { TextInput, View } from "react-native";
+import { Image, Text, TextInput, View } from "react-native";
 import { styles } from "../style";
 
 
@@ -11,14 +11,14 @@ export const MobileInputComponent = ({
 }) => {
     return (
         <View style={styles.mobileInputBlock}>
-            <View style={styles.countryCodediv}>
-                <Image source={require('../assets/flag.png')} />
-                <Text>+91</Text>
-                <Image source={require('../assets/arrow.png')} />
+            <View style={styles.countryCodeDiv}>
+                <Image source={require('./assets/flag.png')} />
+                <Text style={styles.countryCode}>+91</Text>
+                <Image source={require('./assets/arrow.png')} />
                 <View style={styles.borderRight} />
             </View>
             <TextInput
-                style={styles.input}
+                style={styles.mobileInput}
                 onChangeText={onChange}
                 value={value}
                 placeholder={placeholder}
