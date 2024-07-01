@@ -25,6 +25,7 @@ export const MobileInputComponent = ({
                 multiline={multiline}
                 numberOfLines={numberOfLines}
                 keyboardType='phone-pad'
+                placeholderTextColor="#4E585E" 
             />
         </View>
     )

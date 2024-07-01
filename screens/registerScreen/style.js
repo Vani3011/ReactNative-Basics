@@ -103,8 +103,8 @@ export const styles = StyleSheet.create({
   },
   borderRight: {
     borderRightWidth: 1,
-    borderWidth: 1,
-    borderColor: '#B3B8BB',
+    // borderWidth: 1,
+    borderColor: '#02111A',
     height: 40,
     marginLeft: 12,
     flexDirection: 'row',
@@ -135,6 +135,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '30%',
+    paddingLeft:10
   },
   inputdiv:{
     flex:1,

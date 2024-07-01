@@ -18,6 +18,7 @@ export const TextBox = ({
             placeholder={value !== "" ? "" : placeholder}
             multiline={multiline}
             numberOfLines={numberOfLines}
+            placeholderTextColor="#4E585E" 
         />
         </View>
     )
