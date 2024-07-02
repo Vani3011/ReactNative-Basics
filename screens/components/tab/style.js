@@ -1,0 +1,47 @@
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+    horizontalSection:{
+      flexDirection:'row',
+      alignItems:'center',
+    },
+    roundedTab:{
+        borderWidth:1,
+        borderColor:'#E4E8EE',
+        borderRadius:20,
+        paddingVertical:8,
+        paddingHorizontal:12,
+        backgroundColor:"#ffffff",
+        marginHorizontal:4,
+        flexDirection:'row',
+        alignItems:'center'
+    },
+    tabText:{
+        fontSize:14,
+        fontFamily:'Poppins-Medium',
+        color:"#02111A",
+        textAlign:'center'
+    },
+    selectedRoundedTab:{
+        borderWidth:1,
+        borderColor:'#ffffff',
+        borderRadius:20,
+        paddingVertical:8,
+        paddingHorizontal:12,
+        backgroundColor:"#B10606",
+        marginHorizontal:4,
+        flexDirection:'row',
+        alignItems:'center'
+    },
+    selectedTabText:{
+        fontSize:14,
+        fontFamily:'Poppins-Medium',
+        color:"#ffffff",
+        textAlign:'center'
+    },
+    icon:{
+        width:15,
+        height:15,
+        marginLeft:4,
+    }
+})
