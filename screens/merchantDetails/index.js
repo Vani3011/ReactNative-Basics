@@ -1,4 +1,4 @@
-import { FlatList, Image, SafeAreaView, ScrollView, Text, View } from "react-native"
+import { FlatList, Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
 import { styles } from "./style"
 import { TabComponent } from "../components/tab"
 import { useState } from "react"
@@ -46,6 +46,24 @@ const MerchantDetails = () => {
             setItemList(FoodList)
         }
     }
+    const onIncrement = (val) => {
+        const result = itemList?.map((x) => {
+            return {
+                ...x,
+                count: val?.id === x?.id ? (x?.count + 1 ): x?.count
+            }
+        })
+        setItemList(result)
+    }
+    const onDecrement = (val) => {
+        const result = itemList?.map((x) => {
+            return {
+                ...x,
+                count: val?.id === x?.id ? (x?.count - 1 ): x?.count
+            }
+        })
+        setItemList(result)
+    }
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View style={styles.container}>
@@ -80,9 +98,21 @@ const MerchantDetails = () => {
                         }
                     </View>
                     <View style={{ marginTop: 12 }}>
-                        <AddItem list={itemList} selectedItems={selectedItems} />
+                        <AddItem list={itemList} selectedItems={selectedItems} onIncrement={onIncrement} onDecrement={onDecrement} />
                     </View>
                 </View>
+            </View>
+            <View style={styles.bottomBtn}>
+                <TouchableOpacity>
+                    <View style={{
+                        backgroundColor: "#B10606",
+                        padding: 16,
+                        borderRadius: 8,
+
+                    }}>
+                        <Text style={styles.submitBtn}>Rs.100</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
             {/* <ScrollView horizontal={true}>
                 

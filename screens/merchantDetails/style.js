@@ -66,5 +66,18 @@ export const styles = StyleSheet.create({
         width:25,
         height:25,
         marginLeft:4,
-    }
+    },
+    bottomBtn: {
+        width: '100%',
+        backgroundColor: '#FFFFFF',
+        position: 'absolute', //Here is the trick
+        bottom: 0, //Here is the trick
+        padding: 16
+      },
+      submitBtn: {
+        textAlign: "center",
+        color: "#FFFFFF",
+        fontSize: 20,
+        fontFamily:'Poppins-Medium'
+      },
 })

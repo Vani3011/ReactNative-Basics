@@ -1,13 +1,14 @@
-import { Image, SafeAreaView, ScrollView, Text, View } from "react-native"
+import { Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
 import { styles } from "./style"
 
 
-export const AddItem = ({ list = [] }) => {
+export const AddItem = ({ list = [],onIncrement=()=>false,onDecrement=()=>false }) => {
     return (
+        <SafeAreaView>
             <ScrollView>
-                {list?.map((x => {
+                {list?.map((x, i) => {
                     return (
-                        <View style={styles.firstBlock}>
+                        <View style={styles.firstBlock} key={x?.id}>
                             <View style={styles.secondCol}>
                                 <View style={styles.detailsBlock}>
                                     <Image
@@ -24,19 +25,24 @@ export const AddItem = ({ list = [] }) => {
                                 </View>
                             </View>
                             <View style={styles.firstCol}>
-                                <View style={styles.decrementBox}>
+                                <TouchableOpacity onPress={()=>onDecrement(x)} disabled={x?.count===0?true:false}>
+                                <View style={x?.count>0?styles.decrementBox:styles.disableDecrementBox}>
                                     <Text style={styles.decrementSymbol}>-</Text>
                                 </View>
+                                </TouchableOpacity>
                                 <View style={{ marginRight: 8, marginLeft: 8 }}>
-                                    <Text>0</Text>
+                                    <Text>{x?.count}</Text>
                                 </View>
+                                <TouchableOpacity onPress={()=>onIncrement(x)}>
                                 <View style={styles.incrementBox}>
                                     <Text style={styles.incrementSymbol}>+</Text>
                                 </View>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     )
-                }))}
+                })}
             </ScrollView>
+        </SafeAreaView>
     )
 }

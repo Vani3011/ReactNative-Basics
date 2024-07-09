@@ -1,10 +1,22 @@
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import RegisterScreen from './screens/registerScreen';
-import MerchantDetails from './screens/merchantDetails';
+import {default as Home } from './screens/foodApp';
+import { Dashboard } from './screens/foodApp/dashboard';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-   <MerchantDetails/>
+    <NavigationContainer>
+      <Stack.Navigator  screenOptions={{
+    headerShown: false
+  }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

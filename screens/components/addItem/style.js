@@ -46,25 +46,35 @@ export const styles = StyleSheet.create({
       backgroundColor: '#b10606',
       borderRadius: 20,
       justifyContent: 'center',
-      width: 20,
-      height: 20,
+      width: 25,
+      height: 25,
+      alignItems:'center',
+    },
+    disableDecrementBox:{
+      backgroundColor: '#E4E8EE',
+      borderRadius: 20,
+      justifyContent: 'center',
+      width: 25,
+      height: 25,
       alignItems:'center',
     },
     decrementSymbol: {
       color: '#ffffff',
       textAlign:'center',
+      fontSize:16
     },
     incrementBox: {
       backgroundColor: '#b10606',
       borderRadius: 20,
       justifyContent: 'center',
-      width: 20,
-      height: 20,
+      width: 25,
+      height: 25,
       alignItems:'center'
     },
     incrementSymbol: {
       color: '#ffffff',
       textAlign:'center',
+      fontSize:16
     },
     secondCol: {
       flex: 3,
