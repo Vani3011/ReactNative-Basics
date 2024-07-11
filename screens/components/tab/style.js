@@ -16,6 +16,18 @@ export const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center'
     },
+    roundedTabCustom:{
+        borderWidth:1,
+        borderColor:'#E4E8EE',
+        borderRadius:50,
+        paddingVertical:8,
+        paddingHorizontal:12,
+        backgroundColor:"#ffffff",
+        marginHorizontal:4,
+        flexDirection:'row',
+        alignItems:'center',
+        width:130
+    },
     tabText:{
         fontSize:14,
         fontFamily:'Poppins-Medium',
@@ -33,6 +45,18 @@ export const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center'
     },
+    selectedRoundedTabCustom:{
+        borderWidth:1,
+        borderColor:'#ffffff',
+        borderRadius:50,
+        paddingVertical:8,
+        paddingHorizontal:12,
+        backgroundColor:"#ed714d",
+        marginHorizontal:4,
+        flexDirection:'row',
+        alignItems:'center',
+        width:130
+    },
     selectedTabText:{
         fontSize:14,
         fontFamily:'Poppins-Medium',
@@ -43,5 +67,22 @@ export const styles = StyleSheet.create({
         width:15,
         height:15,
         marginLeft:4,
+    },
+    selImageBox:{
+        backgroundColor:'white',
+        borderRadius:50,
+        marginRight:5,
+        padding:6
+    },
+    imageBox:{
+        backgroundColor:'#FEF5F3',
+        borderRadius:50,
+        marginRight:5,
+        padding:6
+    },
+    CustomIcon:{
+        width:30,
+        height:30,
+        borderRadius:50,
     }
 })

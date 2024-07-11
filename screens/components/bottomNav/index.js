@@ -16,7 +16,7 @@ export const BottomNavBar = () =>{
             />
             <Tab.Screen name="Favourites" component={Dashboard}/>
             <Tab.Screen name="Cart" component={Dashboard}/>
-            <Tab.Screen name="Notificationsnpm i react-native-vector-icons" component={Dashboard}/>
+            <Tab.Screen name="Notifications" component={Dashboard}/>
 
         </Tab.Navigator>
     )

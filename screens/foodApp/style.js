@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
         fontSize: 24,
         textAlign: 'center',
         color: "#000000",
-        marginTop:-8
+        marginTop: -8
     },
     subTitle: {
         fontFamily: 'Poppins-Medium',
@@ -36,9 +36,9 @@ export const styles = StyleSheet.create({
     },
     imageContainer: {
         flex: 1,
-        marginTop:50,
-        borderTopRightRadius:16,
-        borderTopLeftRadius:10
+        marginTop: 50,
+        borderTopRightRadius: 16,
+        borderTopLeftRadius: 10
         // justifyContent: 'center',
         // alignItems: 'center'
     },
@@ -46,14 +46,14 @@ export const styles = StyleSheet.create({
         width: 100,
         height: 100,
         borderRadius: 150,
-        padding:60,
-        backgroundColor:'#FFFFFF',
-        marginLeft:-25,
+        padding: 60,
+        backgroundColor: '#FFFFFF',
+        marginLeft: -25,
         // flex:1,
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    image1:{
+    image1: {
         width: 80,
         height: 80,
         borderRadius: 150,
@@ -62,15 +62,15 @@ export const styles = StyleSheet.create({
         width: 100,
         height: 100,
         borderRadius: 150,
-        padding:90,
-        backgroundColor:'#FFFFFF',
-        marginLeft:90,
-        marginTop:-65,
+        padding: 90,
+        backgroundColor: '#FFFFFF',
+        marginLeft: 90,
+        marginTop: -65,
         // flex:1,
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    image2:{
+    image2: {
         width: 105,
         height: 105,
         borderRadius: 150,
@@ -79,15 +79,15 @@ export const styles = StyleSheet.create({
         width: 120,
         height: 120,
         borderRadius: 150,
-        padding:80,
-        backgroundColor:'#FFFFFF',
-        marginLeft:-75,
-        marginTop:-90,
+        padding: 80,
+        backgroundColor: '#FFFFFF',
+        marginLeft: -75,
+        marginTop: -90,
         // flex:1,
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    image3:{
+    image3: {
         width: 125,
         height: 125,
         borderRadius: 150,
@@ -96,15 +96,15 @@ export const styles = StyleSheet.create({
         width: 100,
         height: 100,
         borderRadius: 150,
-        padding:45,
-        backgroundColor:'#FFFFFF',
-        marginLeft:100,
-        marginTop:-60,
+        padding: 45,
+        backgroundColor: '#FFFFFF',
+        marginLeft: 100,
+        marginTop: -60,
         // flex:1,
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    image4:{
+    image4: {
         width: 70,
         height: 70,
         borderRadius: 150,
@@ -113,15 +113,15 @@ export const styles = StyleSheet.create({
         width: 100,
         height: 100,
         borderRadius: 150,
-        padding:90,
-        backgroundColor:'#FFFFFF',
-        marginLeft:250,
-        marginTop:-180,
+        padding: 90,
+        backgroundColor: '#FFFFFF',
+        marginLeft: 250,
+        marginTop: -180,
         // flex:1,
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    image5:{
+    image5: {
         width: 140,
         height: 140,
         borderRadius: 150,
@@ -130,17 +130,122 @@ export const styles = StyleSheet.create({
         width: 100,
         height: 100,
         borderRadius: 150,
-        padding:60,
-        backgroundColor:'#FFFFFF',
-        marginLeft:290,
-        marginTop:-320,
+        padding: 60,
+        backgroundColor: '#FFFFFF',
+        marginLeft: 290,
+        marginTop: -320,
         // flex:1,
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    image6:{
+    image6: {
         width: 70,
         height: 70,
         borderRadius: 150,
+    },
+    dashboard: {
+        padding: 24
+    },
+    flexDiv: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+
+    },
+    avatarImgBlock: {
+        backgroundColor: 'white',
+        borderRadius: 50,
+        padding: 8
+    },
+    avatarImg: {
+        borderRadius: 50,
+        width: 30,
+        height: 30,
+    },
+    locationDiv: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        textAlign: 'center'
+    },
+    locationText: {
+        fontSize: 14,
+        fontFamily: 'Poppins-SemiBold',
+        marginHorizontal: 4
+    },
+    toggleBlock: {
+        backgroundColor: 'white',
+        borderRadius: 50,
+        padding: 8
+    },
+    foodContent: {
+        fontSize: 24,
+        fontFamily: 'Poppins-Medium',
+        color: '#000000'
+    },
+    content: {
+        marginTop: 16,
+    },
+    popularFoodTitle: {
+        fontSize: 18,
+        fontFamily: 'Poppins-Medium',
+        color: '#000000'
+    },
+    seeAll: {
+        fontSize: 14,
+        fontFamily: 'Poppins-Medium',
+    },
+    foodListCard: {
+        borderRadius: 12,
+        height: 200,
+        padding: 12,
+        backgroundColor: 'white'
+    },
+    foodImageContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    foodImage: {
+        width: 100,
+        height: 100,
+        // borderRadius:50
+    },
+    elevation: {
+        // elevation: 5,
+        // shadowColor: '#FEF5F3',
+        // backgroundColor:'#FEF5F3',
+        // borderRadius:50,
+        // width: 100,
+        // height: 100
+      },
+    foodName: {
+        fontSize: 16,
+        fontFamily: 'Poppins-Medium',
+        color: '#000000',
+        // textAlign: 'center',
+        marginTop: 8
+    },
+    foodDetailRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop:4
+    },
+    subDetails: {
+        fontSize: 12,
+        fontFamily: 'Poppins-Medium',
+        color: '#949494',
+    },
+    dot: {
+        width: 6,
+        height: 6,
+        borderRadius: 50,
+        backgroundColor: '#ed714d',
+        marginHorizontal: 6
     }
+    // avatarImg:{
+    //     borderRadius:50,
+    //     width:30,
+    //     height:30,
+    // },
 })
