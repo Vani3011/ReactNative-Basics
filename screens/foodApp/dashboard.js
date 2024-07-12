@@ -6,21 +6,23 @@ import { FoodCard } from "./components/card";
 import { FoodList, TabList } from "./data";
 import { useState } from "react";
 import { CustomTabComponent } from "../components/tab";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
-export const Dashboard = () => {
+export const Menu = (props) => {
     const [selectedList, setSelectedList] = useState(TabList[0])
     const [selectedFoodList, setSelectedFoodList] = useState(FoodList)
     const handleChangeTab = (val) => {
         setSelectedList(val)
         if (val?.value > 2) {
-            setItemList(FoodList?.filter((x) => { return x?.type === (val.type === 2 ? "Pizza" : val?.type === 3 ? "Salads" : "Biryani") }))
+            setSelectedFoodList(FoodList?.filter((x) => { return x?.type === (val.type === 2 ? "Pizza" : val?.type === 3 ? "Salads" : "Biryani") }))
         }
         else {
-            setSelectedFoodList(FoodList?.filter((x)=>{return x?.type==="Biryani"}))
+            setSelectedFoodList(FoodList?.filter((x) => { return x?.type === "Biryani" }))
         }
     }
     return (
-        <LinearGradient colors={['#f7f7f7', '#f7f7f7','#FEF4F8']} start={{ x: 0, y:1}} end={{ x: 1, y: 0.5 }} style={{ flex: 1 }}>
+        <LinearGradient colors={['#f7f7f7', '#f7f7f7', '#FEF4F8']} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0.5 }} style={{ flex: 1 }}>
             <View style={styles.dashboard}>
                 <View style={styles.flexDiv}>
                     <View style={styles.avatarImgBlock}>
@@ -31,7 +33,7 @@ export const Dashboard = () => {
                         <Text style={styles.locationText}>India</Text>
                         <Icon name="chevron-down-sharp" size={16} />
                     </View>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>props.navigation.openDrawer()}>
                         <View style={styles.toggleBlock}>
                             <Icon name="menu-sharp" size={20} />
                         </View>
@@ -41,13 +43,13 @@ export const Dashboard = () => {
                     <Text style={styles.foodContent}>Ready to order{'\n'}your favourite food?</Text>
                 </View>
                 <View style={{ marginTop: 12 }}>
-                        <FlatList
-                            data={TabList}
-                            renderItem={({ item }) => <CustomTabComponent list={item} onChangeTab={handleChangeTab} selectedList={selectedList} />}
-                            keyExtractor={item => item.value}
-                            horizontal
-                        />
-                    </View>
+                    <FlatList
+                        data={TabList}
+                        renderItem={({ item }) => <CustomTabComponent list={item} onChangeTab={handleChangeTab} selectedList={selectedList} />}
+                        keyExtractor={item => item.value}
+                        horizontal
+                    />
+                </View>
                 <View style={{ marginTop: 10, ...styles.flexDiv }}>
                     <Text style={styles.popularFoodTitle}>Popular Food</Text>
                     <Text style={styles.seeAll}>See all</Text>
@@ -73,3 +75,75 @@ export const Dashboard = () => {
         </LinearGradient>
     )
 }
+
+export const Dashboard = (props) => {
+    const Tab = createBottomTabNavigator()
+    return (
+        <Tab.Navigator screenOptions={{
+            tabBarStyle: {
+                margin: 12,
+                borderRadius: 40,
+                height: 75,
+                backgroundColor: '#ffffff',
+                position:'absolute'
+            },
+            headerShown: false,
+            tabBarShowLabel: false,
+            tabBarActiveBackgroundColor: '#ffffff',
+            tabBarActiveTintColor: '#ffffff',
+            tabBarItemStyle: {
+                borderRadius: 40,
+            },
+
+        }}
+        >
+            <Tab.Screen name="Home"
+                component={Menu}
+                options={{
+                    tabBarIcon: ({ size, focused, color }) => (
+                        <View style={{ backgroundColor: focused ? "#ed714d" : "#ffffff", borderRadius: 50, padding: focused ? 20 : 0 }}>
+                            <Icon name={focused ? "home" : "home-outline"} size={20} color={focused ? "#ffffff" : "#000000"} />
+                        </View>
+                    ),
+                }} />
+            <Tab.Screen name="Favourite"
+                component={Menu}
+                options={{
+                    tabBarIcon: ({ size, focused, color }) => (
+                        <View style={{ backgroundColor: focused ? "#ed714d" : "#ffffff", borderRadius: 50, padding: focused ? 20 : 0 }}>
+                            <Icon name={focused ? "heart" : "heart-outline"} size={20} color={focused ? "#ffffff" : "#000000"} />
+                        </View>
+                    ),
+                }} />
+            <Tab.Screen name="Cart"
+                component={Menu}
+                options={{
+                    tabBarIcon: ({ size, focused, color }) => (
+                        <View style={{ backgroundColor: focused ? "#ed714d" : "#ffffff", borderRadius: 50, padding: focused ? 20 : 0 }}>
+                            <Icon name={focused ? "cart" : "cart-outline"} size={20} color={focused ? "#ffffff" : "#000000"} />
+                        </View>
+
+                    ),
+                }} />
+            <Tab.Screen name="Notification"
+                component={Menu}
+                options={{
+                    tabBarIcon: ({ size, focused, color }) => (
+                        <View style={{ backgroundColor: focused ? "#ed714d" : "#ffffff", borderRadius: 50, padding: focused ? 20 : 0 }}>
+                            <Icon name={focused ? "notifications" : "notifications-outline"} size={20} color={focused ? "#ffffff" : "#000000"} />
+                        </View>
+                    ),
+                }} />
+        </Tab.Navigator>
+    )
+}
+export const DrawerNav = () => {
+    const Drawer = createDrawerNavigator()
+    return (
+      <Drawer.Navigator screenOptions={{
+        headerShown: false
+      }}>
+        <Drawer.Screen name="Dashboard" component={Dashboard} />
+      </Drawer.Navigator>
+    )
+  }

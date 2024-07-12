@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { default as Home } from './screens/foodApp';
-import { Dashboard } from './screens/foodApp/dashboard';
+import { Dashboard, DrawerNav } from './screens/foodApp/dashboard';
 
 const Stack = createStackNavigator();
 
@@ -14,7 +14,7 @@ const App = () => {
         headerShown: false
       }}>
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="DrawerNav" component={DrawerNav} />
       </Stack.Navigator>
     </NavigationContainer>
   );

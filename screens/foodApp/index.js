@@ -17,7 +17,7 @@ const Home = (props) => {
                 <Text style={styles.subTitle}>right at your fingertips</Text>
             </View>
             <View style={styles.bottomBtn}>
-                <TouchableOpacity  onPress={() => props.navigation.navigate('Dashboard')}>
+                <TouchableOpacity  onPress={() => props.navigation.navigate('DrawerNav')}>
                     <View style={{
                         backgroundColor: "#ED714D",
                         padding: 16,
